@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 80%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        th:first-child, td:first-child {
+            padding-left: 20px;
+        }
+        th:last-child, td:last-child {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+</head>
+<body>
+<h2>Car Directory </h2>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>Model</th>
+        <th>MaxSpeed</th>
+        <th>series</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car:${cars}">
+        <td><span th:text="${car.model}">Model</span></td>
+        <td><span th:text="${car.maxSpeed}">MaxSpeed</span></td>
+        <td><span th:text="${car.series}">Series</span></td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
